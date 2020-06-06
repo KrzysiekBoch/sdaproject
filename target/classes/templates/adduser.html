@@ -8,7 +8,7 @@
 <form th:action="@{/adduser}" th:object="${userToInsert}" method="post">
     <p>Imie: <input type="text" th:field="*{name}"/> </p>
     <p>Nazwisko: <input type="text" th:field="*{surname}"/> </p>
-    <p>Numer telefonu: <input type="number" th:field="*{nrtelefonu}"/> </p>
+    <p>Numer telefonu: <input type="number" th:field="*{phone}"/> </p>
     <p>Hasło: <input type="password" th:field="*{password}"/> </p>
     <p>Email: <input type="text" th:field="*{email}"/> </p>
     <p> <input type="submit" value="Rejestruj"/> </p>

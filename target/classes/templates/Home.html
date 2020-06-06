@@ -5,10 +5,15 @@
     <title>Strona Domowa</title>
 </head>
 <body>
-<form th:action="@{/Home}" th:object="${userToInsert}" method="post">
-    <p>Email: <input type="text" th:field="*{email}"/> </p>
-    <p>Haslo: <input type="password" th:field="*{password}"/> </p>
-    <p> <input type="submit" value="Zaloguj"/> </p>
+<form th:action="@{/login-process}" method="post">
+    <label for="inputUsername">Username:</label>
+    <input type="text" id="inputUsername" th:placeholder="Podaj email"
+           th:required="required" th:name="username"/>
+    <label for="inputPassword">Password:</label>
+    <input type="password" id="inputPassword" placeholder="Podaj hasło"
+           th:required="required" th:name="password"/>
+
+    <button type="submit">Zaloguj</button>
 </form>
 <form action="/rejestracja">
     <button class="btn btn-success" type="submit">Nie masz konta? Zarejestruj sie</button>

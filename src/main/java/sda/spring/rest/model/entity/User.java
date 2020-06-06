@@ -8,11 +8,34 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String imie;
-    private String nazwisko;
-    private Integer nrtelefonu;
-    private String haslo;
+    private String name;
+    private String surname;
+    private Integer phone;
+    private String password;
     private String email;
+    private String role;
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", phone=" + phone +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 
     public Long getId() {
         return id;
@@ -22,36 +45,36 @@ public class User {
         this.id = id;
     }
 
-    public String getImie() {
-        return imie;
+    public String getName() {
+        return name;
     }
 
-    public void setImie(String imie) {
-        this.imie = imie;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getNazwisko() {
-        return nazwisko;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setNazwisko(String nazwisko) {
-        this.nazwisko = nazwisko;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public Integer getNrtelefonu() {
-        return nrtelefonu;
+    public Integer getPhone() {
+        return phone;
     }
 
-    public void setNrtelefonu(Integer nrtelefonu) {
-        this.nrtelefonu = nrtelefonu;
+    public void setPhone(Integer phone) {
+        this.phone = phone;
     }
 
-    public String getHaslo() {
-        return haslo;
+    public String getPassword() {
+        return password;
     }
 
-    public void setHaslo(String haslo) {
-        this.haslo = haslo;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -60,17 +83,5 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", imie='" + imie + '\'' +
-                ", nazwisko='" + nazwisko + '\'' +
-                ", nrtelefonu=" + nrtelefonu +
-                ", haslo='" + haslo + '\'' +
-                ", email='" + email + '\'' +
-                '}';
     }
 }

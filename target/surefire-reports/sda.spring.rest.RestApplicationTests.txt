@@ -1,4 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: sda.spring.rest.RestApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.435 s - in sda.spring.rest.RestApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 8.141 s <<< FAILURE! - in sda.spring.rest.RestApplicationTests
+contextLoads  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userController': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService' defined in file [E:\rest2\rest\target\classes\sda\spring\rest\service\UserService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class sda.spring.rest.model.entity.User
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userService' defined in file [E:\rest2\rest\target\classes\sda\spring\rest\service\UserService.class]: Unsatisfied dependency expressed through constructor parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class sda.spring.rest.model.entity.User
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Not a managed type: class sda.spring.rest.model.entity.User
+Caused by: java.lang.IllegalArgumentException: Not a managed type: class sda.spring.rest.model.entity.User
+
